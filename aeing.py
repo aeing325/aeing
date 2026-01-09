@@ -1,34 +1,34 @@
-import tkinter
+import tkinter as tk
 import random
 from PIL import Image, ImageTk
 
 아이디비번 = {'관리자':'ADMIN', '최이든':'비번', '부계':'부계', '':''}
 
-window=tkinter.Tk()
+window=tk.Tk()
 
 
-frame1=tkinter.Frame(window)
+frame1=tk.Frame(window)
 frame1.pack(fill='both', expand=True)
 
 # 회원가입 프레임
-회원가입=tkinter.Frame(noot)
+회원가입=tk.Frame(noot)
 회원가입.place(x=0,y=0,relwidth=1,relheight=1)
 
 #뽑기 프레임
-뽑기=tkinter.Frame(noot)
+뽑기=tk.Frame(noot)
 뽑기.place(x=0,y=0,relwidth=1,relheight=1)
 
 #뽑기 성공 프레임
-뽑기성공=tkinter.Frame(noot)
+뽑기성공=tk.Frame(noot)
 뽑기성공.place(x=0,y=0,relwidth=1,relheight=1)
 
 #거래하기 프레임
-거래하기프레임=tkinter.Frame(noot)
+거래하기프레임=tk.Frame(noot)
 거래하기프레임.place(x=0,y=0,relwidth=1,relheight=1)
 
 
 # 처음에 보일 프레임
-로그인=tkinter.Frame(noot)
+로그인=tk.Frame(noot)
 로그인.place(x=0,y=0,relwidth=1,relheight=1)
 
 
@@ -47,19 +47,19 @@ def login():
 def signupframe():
     회원가입.tkraise()
 
-로label=tkinter.Label(로그인, text="로그인", width=20, height=0, fg="black", relief="flat")
+로label=tk.Label(로그인, text="로그인", width=20, height=0, fg="black", relief="flat")
 로label.pack(pady=10)
 
-id=tkinter.Entry(로그인)
+id=tk.Entry(로그인)
 id.pack()
 
-pw=tkinter.Entry(로그인, show="*")
+pw=tk.Entry(로그인, show="*")
 pw.pack()
 
-loginbutton = tkinter.Button(로그인, overrelief="solid", width=15, text="로그인하기", command=login)
+loginbutton = tk.Button(로그인, overrelief="solid", width=15, text="로그인하기", command=login)
 loginbutton.pack(pady=(10,0))
 
-signupbutton = tkinter.Button(로그인, overrelief="solid", width=15, text="회원가입하기", command=signupframe)
+signupbutton = tk.Button(로그인, overrelief="solid", width=15, text="회원가입하기", command=signupframe)
 signupbutton.pack(pady=(10,0))
 
 # 회원가입 프레임 코드
@@ -72,16 +72,16 @@ def sign_up():
         아이디비번[아이디] = 비번
     로그인.tkraise()
 
-회label=tkinter.Label(회원가입, text="회원가입", width=20, height=0, fg="black", relief="flat")
+회label=tk.Label(회원가입, text="회원가입", width=20, height=0, fg="black", relief="flat")
 회label.pack(pady=10)    
 
-id2=tkinter.Entry(회원가입)
+id2=tk.Entry(회원가입)
 id2.pack()
 
-pw2=tkinter.Entry(회원가입, show="*")
+pw2=tk.Entry(회원가입, show="*")
 pw2.pack()
 
-signupbutton2 = tkinter.Button(회원가입, overrelief="solid", width=15, text="회원가입완료", command=sign_up)
+signupbutton2 = tk.Button(회원가입, overrelief="solid", width=15, text="회원가입완료", command=sign_up)
 signupbutton2.pack()
 
 
@@ -117,7 +117,7 @@ def 뽑기함수():
     뽑기성공이미지label.config(image=나온사진)
     뽑기성공.tkraise()
 
-뽑button=tkinter.Button(뽑기, text='뽑기', command=뽑기함수)
+뽑button=tk.Button(뽑기, text='뽑기', command=뽑기함수)
 뽑button.pack()
 
 
@@ -130,36 +130,36 @@ def 거래함수():
 
 
 
-뽑기성공이미지label=tkinter.Label(뽑기성공, image=사과사진, width=250, height=0, fg="black", relief="flat")
+뽑기성공이미지label=tk.Label(뽑기성공, image=사과사진, width=250, height=0, fg="black", relief="flat")
 뽑기성공이미지label.pack(pady=10)    
 
-뽑기성공글자label=tkinter.Label(뽑기성공, text='뽑기 성공', width=20, height=0, fg="black", relief="flat")
+뽑기성공글자label=tk.Label(뽑기성공, text='뽑기 성공', width=20, height=0, fg="black", relief="flat")
 뽑기성공글자label.pack(pady=10)
 
-뽑기성공후거래버튼=tkinter.Button(뽑기성공,text='거래하기',command=거래함수)
+뽑기성공후거래버튼=tk.Button(뽑기성공,text='거래하기',command=거래함수)
 뽑기성공후거래버튼.pack(pady=10)
 
 #거래하기 프레임 코드
 
-상대이미지=tkinter.Label(거래하기프레임, image=사과사진2, width=250, height=0, fg="black", relief="flat")
+상대이미지=tk.Label(거래하기프레임, image=사과사진2, width=250, height=0, fg="black", relief="flat")
 상대이미지.grid(row=0,column=0) 
 
-자신이미지=tkinter.Label(거래하기프레임, image=오렌지사진2, width=250, height=0, fg="black", relief="flat")
+자신이미지=tk.Label(거래하기프레임, image=오렌지사진2, width=250, height=0, fg="black", relief="flat")
 자신이미지.grid(row=4,column=1) 
 
-자신글자=tkinter.Label(거래하기프레임, text='나')
+자신글자=tk.Label(거래하기프레임, text='나')
 자신글자.grid(row=4,column=0) 
 
-상대글자=tkinter.Label(거래하기프레임, text='상대')
+상대글자=tk.Label(거래하기프레임, text='상대')
 상대글자.grid(row=0,column=1) 
 
-거래하실=tkinter.Label(거래하기프레임, text='거래하실?')
+거래하실=tk.Label(거래하기프레임, text='거래하실?')
 거래하실.grid(row=1,column=0, columnspan=2) 
 
-거래동의버튼=tkinter.Button(거래하기프레임,text='동의 ㄱ')
+거래동의버튼=tk.Button(거래하기프레임,text='동의 ㄱ')
 거래동의버튼.grid(row=2,column=0, columnspan=2) 
 
-거래취소버튼=tkinter.Button(거래하기프레임,text='ㄴㄴ 취소')
+거래취소버튼=tk.Button(거래하기프레임,text='ㄴㄴ 취소')
 거래취소버튼.grid(row=3,column=0, columnspan=2) 
 
 
